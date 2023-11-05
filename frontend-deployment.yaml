@@ -15,21 +15,23 @@ spec:
         app: frontend
     spec:
       containers:
-        - name: frontend
+        - name: udagram-frontend
           image: oanhtp/udagram-frontend:v3
           imagePullPolicy: Always
           resources:
             requests:
-              cpu: 250m
+              memory: "64Mi"
+              cpu: "250m"
             limits:
-              cpu: 500m
+              memory: "1024Mi"
+              cpu: "500m"
           envFrom:
             - secretRef:
-              name: env-secret
+                name: env-secret
             - secretRef:
-              name: aws-secret
+                name: aws-secret
             - configMapRef:
-              name: config-secret
+                name: env-config
           ports:
             - containerPort: 8080
       restartPolicy: Always
