@@ -16,14 +16,12 @@ spec:
     spec:
       containers:
         - name: udagram-api-feed
-          image: oanhtp/udagram-api-feed:v4
+          image: oanhtp/udagram-api-feed:v6
           imagePullPolicy: Always
           resources:
             requests:
-              memory: "64Mi"
               cpu: "250m"
             limits:
-              memory: "1024Mi"
               cpu: "500m"
           envFrom:
             - secretRef:
