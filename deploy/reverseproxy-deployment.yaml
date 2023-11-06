@@ -1,35 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-feed
   labels:
-    app: api-feed
+    app: reverseproxy
+  name: reverseproxy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: api-feed
+      app: reverseproxy
   template:
     metadata:
       labels:
-        app: api-feed
+        app: reverseproxy
     spec:
       containers:
-        - name: udagram-api-feed
-          image: oanhtp/udagram-api-feed:v7
+        - image: oanhtp/udagram-reverseproxy:v8
+          name: udagram-reverseproxy
           imagePullPolicy: Always
           resources:
             requests:
+              memory: "64Mi"
               cpu: "250m"
             limits:
+              memory: "1024Mi"
               cpu: "500m"
-          envFrom:
-            - secretRef:
-                name: env-secret
-            - secretRef:
-                name: aws-secret
-            - configMapRef:
-                name: env-config
           ports:
             - containerPort: 8080
       restartPolicy: Always
