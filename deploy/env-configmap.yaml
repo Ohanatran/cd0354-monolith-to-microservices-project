@@ -7,7 +7,8 @@ data:
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
-  URL: http://localhost:8100
-
+  URL: https://a1c98ced60b0849e0a073a0951aae428-669054316.us-east-1.elb.amazonaws.com
+  PORT: "8080"
+  SEQUELIZE_CONFIG: '{"dialectOptions": {"ssl": {"rejectUnauthorized": false}}}'
 metadata:
   name: env-config

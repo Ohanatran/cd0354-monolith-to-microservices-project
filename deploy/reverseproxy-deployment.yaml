@@ -13,7 +13,7 @@ spec:
         run: reverseproxy
     spec:
       containers:
-        - image: oanhtp/udagram-reverseproxy:v9
+        - image: oanhtp/udagram-reverseproxy:v14
           name: reverseproxy
           imagePullPolicy: Always
           resources:
