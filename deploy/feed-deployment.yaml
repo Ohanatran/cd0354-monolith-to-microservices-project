@@ -30,6 +30,4 @@ spec:
                 name: aws-secret
             - configMapRef:
                 name: env-config
-          ports:
-            - containerPort: 8080
       restartPolicy: Always
