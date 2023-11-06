@@ -33,5 +33,5 @@ spec:
             - configMapRef:
                 name: env-config
           ports:
-            - containerPort: 8080
+            - containerPort: 8100
       restartPolicy: Always
