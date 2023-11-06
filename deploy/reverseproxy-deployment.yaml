@@ -15,7 +15,7 @@ spec:
         app: reverseproxy
     spec:
       containers:
-        - image: oanhtp/udagram-reverseproxy:v8
+        - image: oanhtp/udagram-reverseproxy:v9
           name: udagram-reverseproxy
           imagePullPolicy: Always
           resources:
